@@ -46,7 +46,7 @@ public class Main{
 
 
 	public static void main(String[] args){
-		new Main();
+		new Main().start();
 	}
 
 
@@ -69,7 +69,6 @@ public class Main{
 			e.printStackTrace();
 			System.exit(1);
 		}
-		Main cls=this;
 		this.frame=new JFrame("Capture");
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.setUndecorated(true);
@@ -81,6 +80,12 @@ public class Main{
 		this.frame.setContentPane(this.canvas);
 		this.cap=new VideoCapture(CAM_ID);
 		this.img_mat=new Mat();
+	}
+
+
+
+	public void start(){
+		Main cls=this;
 		new Thread(){
 			@Override
 			public void run(){

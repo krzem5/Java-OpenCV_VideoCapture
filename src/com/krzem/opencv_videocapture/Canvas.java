@@ -8,19 +8,19 @@ import java.awt.Graphics;
 
 
 public class Canvas extends JComponent{
-	Main parent;
+	Main cls;
 
 
 
 	public Canvas(Main p){
-		this.parent=p;
+		this.cls=p;
 	}
 
 
 
 	@Override
 	public void paintComponent(Graphics g){
-		this.parent.draw(g);
+		this.cls.draw(g);
 		super.paintComponent(g);
 		g.dispose();
 	}
